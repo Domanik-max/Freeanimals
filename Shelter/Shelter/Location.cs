@@ -5,6 +5,7 @@ namespace Shelter
     {
         public Location()
         {
+
         }
     }
 }
