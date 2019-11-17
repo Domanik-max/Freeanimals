@@ -1,15 +1,38 @@
 ﻿using System;
 namespace Shelter.Handler
 {
-    public class Repo: IRepo
+    public class Repo: IRepo, IAnimal
     {
+        /// <summary>
+        /// Prints title to console
+        /// </summary>
+        public string ShowTitle()
+        {
+            string title = @"
+                      (                            )                    
+             )\ )            (        ( /(                    
+            (()/(           ))\       )\())               (   
+             /(_))   (     (((_) (   ((_)\   (   `  )    ))\  
+            (_))_    )\    )\  ' )\   _((_)  )\  /(/(   /((_) 
+             |   \  ((_) _((_)) ((_) | || | ((_)((_)_\ (_))   
+             | |) |/ _ \| '  \()(_-< | __ |/ _ \| '_ \)/ -_)  
+             |___/ \___/|_|_|_| /__/ |_||_|\___/| .__/ \___|  
+                                                |_|           
+
+                Press [1]: Customer
+                Press [2]: Admin
+                                                          ";
+            return title;
+
+
+        }
 
         /// <summary>
         /// Prints to console customer menu
         /// </summary>
-        public void customerMenuArt()
+        public string CustomerMenuArt()
         {
-            Console.WriteLine(@"
+            return @"
                                              *                       
            (               *   )   (  `                      
            )\     (      ` )  /(   )\))(     (           (   
@@ -19,15 +42,15 @@ namespace Shelter.Handler
          | (__ | || |(_-<  | |    | |\/| |/ -_)| ' \))| || | 
           \___| \_,_|/__/  |_|    |_|  |_|\___||_||_|  \_,_| 
                                                      
-      ");
+      ";
         }
 
         /// <summary>
         /// Prints to cutomer Admin menu
         /// </summary>
-        public void adminMenuArt()
+        public string AdminMenuArt()
         {
-            Console.WriteLine(@"
+            return @"
                                               *                       
            (      (                        (  `                      
            )\     )\ )    )    (           )\))(     (           (   
@@ -36,7 +59,22 @@ namespace Shelter.Handler
          (_)_\(_) _| | _((_))  (_) _(_/(  |  \/  |(_))  _(_/( (_))(  
           / _ \ / _` || '  \() | || ' \)) | |\/| |/ -_)| ' \))| || | 
          /_/ \_\\__,_||_|_|_|  |_||_||_|  |_|  |_|\___||_||_|  \_,_| 
-       ");
+       ";
         }
+
+
+        public void Serialize()
+        {
+
+
+        }
+
+
+        public void Deserialize()
+        {
+
+        }
+
+      
     }
 }

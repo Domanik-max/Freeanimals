@@ -5,6 +5,7 @@ namespace Shelter.Logic
     {
         public Dog()
         {
+
         }
     }
 }

@@ -53,5 +53,14 @@ namespace Shelter.Logic
             get => _firstName;
             set => _firstName = value;
         }
+
+        /// <summary>
+        /// Set Last name. Can't be null
+        /// </summary>
+        public string LastName
+        {
+            get => _lastName;
+            set => _lastName = value;
+        }
     }
 }

@@ -8,33 +8,18 @@ namespace Shelter.CLI
     class Program
     {
         static void Main(string[] args)
-        {
+        {        
             //Injecting class that contains all methods 
             Repo _repo = new Repo();
 
             //Keep track of answers
             string ans;
-            string title = @"
-                     (                           )                    
-             )\ )            (        ( /(                    
-            (()/(           ))\       )\())               (   
-             /(_))   (     (((_) (   ((_)\   (   `  )    ))\  
-            (_))_    )\    )\  ' )\   _((_)  )\  /(/(   /((_) 
-             |   \  ((_) _((_)) ((_) | || | ((_)((_)_\ (_))   
-             | |) |/ _ \| '  \()(_-< | __ |/ _ \| '_ \)/ -_)  
-             |___/ \___/|_|_|_| /__/ |_||_|\___/| .__/ \___|  
-                                                |_|           
-
-                Press [1]: Customer
-                Press [2]: Admin
-                                                          ";
-
-
+            
             //Start of Console Application
             while (true)
             {
                //Printing main menu to console
-               Console.WriteLine(title);
+               Console.WriteLine(_repo.ShowTitle());
                //Getting ans
                ans = Console.ReadLine();
                 if (ans != "exit")
@@ -47,32 +32,52 @@ namespace Shelter.CLI
                         {
                             // Customer Menu
                             case 1:
-                                _repo.customerMenuArt();
-                                Console.WriteLine("It Continued");
+                               Console.WriteLine(_repo.CustomerMenuArt());
+                  srmenu:      Console.WriteLine($"Press[1]: Sign In\nPress[2]: Register");
+                                 ans = Console.ReadLine();
+                                try
+                                {
+                                    //Exceptional handling for Signin/Reg menu
+                                    if (int.Parse(ans) == 1)
+                                    {
+                                        //Call Sign in Method
+                                        Console.WriteLine("Signin");
+                                    }
+                                    else if (int.Parse(ans) == 2)
+                                    {
+                                        //Call Register Method
+                                        Console.WriteLine("Register");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Invalid Input! Try again");
+                                        goto srmenu;
+                                    }
+                                }catch(Exception e)
+                                {
+                                    //Have to Log error
+                                    Console.WriteLine("Numbers only! Try again");
+                                    goto srmenu;
+
+                                }
+
+
                                 break;
                             // Admin Menu
                             case 2:
-                                _repo.adminMenuArt();
+                                _repo.AdminMenuArt();
                                 break;
-
-
                         }
-
                     }
                     // Base exception
                     catch (Exception e)
                     {
-                        Console.WriteLine("You entered Wrong Input! Try again");
+                        Console.WriteLine("Invalid Input! Try again");
                         continue;
                     }
-
-
-
-
                 }
                 break;
             }
-
             Console.WriteLine("Out of loop");
         }
     }

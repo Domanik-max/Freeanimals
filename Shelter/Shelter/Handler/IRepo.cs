@@ -3,25 +3,41 @@ namespace Shelter.Handler
 {
     interface IRepo
     {
-        /// <summary>
-        /// Functions returns a menu
-        /// </summary>
-        /// <returns>
-        /// Returns ASCII art of menu
-        /// </returns>
-        void customerMenuArt();
-
 
         /// <summary>
-        /// Functions returns a menu for admin
+        /// Functions shows menu
         /// </summary>
         /// <returns>
-        /// Returns ASCII art of menu for admin
+        /// Returns string
         /// </returns>
-        void adminMenuArt();
+        string ShowTitle();
 
+        /// <summary>
+        /// Functions shows customer menu
+        /// </summary>
+        /// <returns>
+        ///  Returns string
+        /// </returns>
+        string CustomerMenuArt();
 
+        /// <summary>
+        /// Functions show admin menu
+        /// </summary>
+        /// <returns>
+        /// Returns string
+        /// </returns>
+        string AdminMenuArt();
 
+        /// <summary>
+        /// Functions that Serializes data
+        /// </summary>
+       
+        void Serialize();
+
+        /// <summary>
+        /// Function to deserialize data
+        /// </summary>
+        void Deserialize();
 
     }
 }
