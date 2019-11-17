@@ -1,6 +1,7 @@
 ﻿using System;
 namespace Shelter.Logic
 {
+    [Serializable]
     public class Person
     {
         // private fields

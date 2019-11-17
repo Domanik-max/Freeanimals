@@ -1,5 +1,7 @@
 ﻿using System;
 using Shelter.Handler;
+using Serilog;
+
 
 namespace Shelter.CLI
 {
