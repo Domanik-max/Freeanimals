@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Shelter
+namespace Shelter.CLI
 {
     class Program
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Shelter
+namespace Shelter.Logic
 {
     public class Location
     {
