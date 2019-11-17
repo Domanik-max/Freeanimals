@@ -1,4 +1,5 @@
 ﻿using System;
+using Shelter.Handler;
 
 namespace Shelter.CLI
 {
@@ -6,25 +7,71 @@ namespace Shelter.CLI
     {
         static void Main(string[] args)
         {
+            //Injecting class that contains all methods 
+            Repo _repo = new Repo();
 
-            
+            //Keep track of answers
+            string ans;
             string title = @"
-DDDDD                       '           HH   HH                       
-DD  DD   oooo  mm mm mmmm  '''  sss     HH   HH  oooo  pp pp     eee  
-DD   DD oo  oo mmm  mm  mm ''' s        HHHHHHH oo  oo ppp  pp ee   e 
-DD   DD oo  oo mmm  mm  mm      sss     HH   HH oo  oo pppppp  eeeee  
-DDDDDD   oooo  mmm  mm  mm         s    HH   HH  oooo  pp       eeeee 
-                                sss                    pp
+                     (                           )                    
+             )\ )            (        ( /(                    
+            (()/(           ))\       )\())               (   
+             /(_))   (     (((_) (   ((_)\   (   `  )    ))\  
+            (_))_    )\    )\  ' )\   _((_)  )\  /(/(   /((_) 
+             |   \  ((_) _((_)) ((_) | || | ((_)((_)_\ (_))   
+             | |) |/ _ \| '  \()(_-< | __ |/ _ \| '_ \)/ -_)  
+             |___/ \___/|_|_|_| /__/ |_||_|\___/| .__/ \___|  
+                                                |_|           
 
-Press [1]: Customer
-Press [2]: Admin
-                                                                  ";
-
-            Console.WriteLine(title);
-            Console.Read();
+                Press [1]: Customer
+                Press [2]: Admin
+                                                          ";
 
 
+            //Start of Console Application
+            while (true)
+            {
+               //Printing main menu to console
+               Console.WriteLine(title);
+               //Getting ans
+               ans = Console.ReadLine();
+                if (ans != "exit")
+                {
+                    //Exception handling
+                    try
+                    {
+                        //Switch to choose between customer and admin
+                        switch (int.Parse(ans))
+                        {
+                            // Customer Menu
+                            case 1:
+                                _repo.customerMenuArt();
+                                Console.WriteLine("It Continued");
+                                break;
+                            // Admin Menu
+                            case 2:
+                                _repo.adminMenuArt();
+                                break;
 
+
+                        }
+
+                    }
+                    // Base exception
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("You entered Wrong Input! Try again");
+                        continue;
+                    }
+
+
+
+
+                }
+                break;
+            }
+
+            Console.WriteLine("Out of loop");
         }
     }
 }
