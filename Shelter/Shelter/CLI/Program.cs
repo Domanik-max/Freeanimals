@@ -1,7 +1,8 @@
 ﻿using System;
 using Shelter.Handler;
 using Serilog;
-
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace Shelter.CLI
 {
@@ -15,6 +16,7 @@ namespace Shelter.CLI
                 .WriteTo.File("/Users/domanikjohnson/Documents/C#GoOver/Freeanimals/Shelter/Shelter/Logging/Log", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
+            
             //Injecting class that contains all methods 
             Repo _repo = new Repo();
 

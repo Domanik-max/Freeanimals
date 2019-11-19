@@ -98,7 +98,7 @@ namespace Shelter.Handler
 
         public void Serialize()
         {
-
+            
 
         }
 
