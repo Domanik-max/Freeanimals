@@ -1,8 +1,14 @@
 ﻿using System;
+using Serilog;
+
 namespace Shelter.Handler
 {
+
+
     public class Repo: IRepo, IAnimal
     {
+
+
         /// <summary>
         /// Prints title to console
         /// </summary>

@@ -8,7 +8,10 @@ namespace Shelter.CLI
     class Program
     {
         static void Main(string[] args)
-        {        
+        {
+            //Created Logger
+           Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+
             //Injecting class that contains all methods 
             Repo _repo = new Repo();
 
@@ -18,6 +21,7 @@ namespace Shelter.CLI
             //Start of Console Application
             while (true)
             {
+                Log.Information("Start of Program");
                //Printing main menu to console
                Console.WriteLine(_repo.ShowTitle());
                //Getting ans
