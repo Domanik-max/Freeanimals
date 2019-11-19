@@ -39,5 +39,13 @@ namespace Shelter.Handler
         /// </summary>
         void Deserialize();
 
+        /// <summary>
+        /// To register a user
+        /// </summary>
+        /// <returns>
+        /// Will return user credentials 
+        /// </returns>
+        void Register(string first, string last, string email, string password);
+
     }
 }

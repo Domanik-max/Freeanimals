@@ -1,5 +1,6 @@
 ﻿using System;
 using Serilog;
+using Shelter.Logic;
 
 namespace Shelter.Handler
 {
@@ -14,6 +15,7 @@ namespace Shelter.Handler
         /// </summary>
         public string ShowTitle()
         {
+            Log.Information("Start of ShowTitle() Function");
             string title = @"
                       (                            )                    
              )\ )            (        ( /(                    
@@ -66,6 +68,31 @@ namespace Shelter.Handler
           / _ \ / _` || '  \() | || ' \)) | |\/| |/ -_)| ' \))| || | 
          /_/ \_\\__,_||_|_|_|  |_||_||_|  |_|  |_|\___||_||_|  \_,_| 
        ";
+        }
+
+
+
+        /// <summary>
+        /// To register the person 
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="last"></param>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns>
+        ///  returns 
+        /// </returns>
+        public void Register(string first, string last, string email, string password)
+        {
+            var newPerson = new Person
+            {
+                FirstName = first,
+                LastName = last,
+                Email = email,
+                Password = password
+            };
+
+           
         }
 
 

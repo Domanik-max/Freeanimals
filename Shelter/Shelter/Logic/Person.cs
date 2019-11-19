@@ -62,5 +62,11 @@ namespace Shelter.Logic
             get => _lastName;
             set => _lastName = value;
         }
+
+        public string Password
+        {
+            get => _password;
+            set => _password = value;
+        }
     }
 }

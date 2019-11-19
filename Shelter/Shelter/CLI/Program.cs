@@ -9,8 +9,11 @@ namespace Shelter.CLI
     {
         static void Main(string[] args)
         {
-            //Created Logger
-           Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+            //Instantiated logger
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Console()
+                .WriteTo.File("/Users/domanikjohnson/Documents/C#GoOver/Freeanimals/Shelter/Shelter/Logging/Log", rollingInterval: RollingInterval.Day)
+                .CreateLogger();
 
             //Injecting class that contains all methods 
             Repo _repo = new Repo();
@@ -49,8 +52,23 @@ namespace Shelter.CLI
                                     }
                                     else if (int.Parse(ans) == 2)
                                     {
-                                        //Call Register Method
-                                        Console.WriteLine("Register");
+                                        // Instantiated variables
+                                        string fn, ln, email, password;
+                                        
+                                        //Store user firstname
+                                        Console.WriteLine("Enter your First name: ");
+                                        fn = Console.ReadLine();
+                                        //Store user last name
+                                        Console.WriteLine("Enter your First name: ");
+                                        ln = Console.ReadLine();
+                                        //Store user email
+                                        Console.WriteLine("Enter your First name: ");
+                                        email = Console.ReadLine();
+                                        //Store user password
+                                        Console.WriteLine("Enter your First name: ");
+                                        password = Console.ReadLine();
+
+                                        _repo.Register(fn,ln,email,password);
                                     }
                                     else
                                     {

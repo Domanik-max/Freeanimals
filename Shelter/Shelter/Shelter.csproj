@@ -9,7 +9,7 @@
     <Folder Include="Handler\" />
     <Folder Include="Logic\" />
     <Folder Include="CLI\" />
-    <Folder Include="Log\" />
+    <Folder Include="Logging\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Serilog" Version="2.9.0" />
@@ -21,5 +21,11 @@
   <ItemGroup>
     <None Remove="Log\log.txt" />
     <None Remove="Log\Log.txr" />
+    <None Remove="Log\Log.txt" />
+    <None Remove="log.txt" />
+    <None Remove="Log20191118.txt" />
+    <None Remove="Log.txt" />
+    <None Remove="20191118" />
+    <None Remove="Logging20191118" />
   </ItemGroup>
 </Project>

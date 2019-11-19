@@ -1,0 +1,4 @@
+2019-11-18 23:10:47.887 -06:00 [INF] Start of Program
+2019-11-18 23:10:48.033 -06:00 [INF] Start of ShowTitle() Function
+2019-11-18 23:11:18.538 -06:00 [INF] Start of Program
+2019-11-18 23:11:18.687 -06:00 [INF] Start of ShowTitle() Function
