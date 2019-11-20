@@ -30,5 +30,6 @@
     <None Remove="Logging20191118" />
     <None Remove="test.txt" />
     <None Remove="Serialization\test.txt" />
+    <None Remove="testt.txt" />
   </ItemGroup>
 </Project>

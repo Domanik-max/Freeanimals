@@ -20,8 +20,8 @@ namespace Shelter.CLI
             }
             */
 
-            FileStream fs1 = new FileStream("/Users/domanikjohnson/Documents/C#GoOver/Freeanimals/Shelter/Shelter/testt.txt", FileMode.OpenOrCreate, FileAccess.Write);
-            StreamWriter writer = new StreamWriter(fs1);
+            FileStream file = new FileStream("/Users/domanikjohnson/Documents/C#GoOver/Freeanimals/Shelter/Shelter/Serialization/serial.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(file);
             writer.Write("Hello Welcome");
             writer.Close();
 
