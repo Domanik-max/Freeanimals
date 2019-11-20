@@ -47,5 +47,13 @@ namespace Shelter.Handler
         /// </returns>
         void Register(string first, string last, string email, string password);
 
+        /// <summary>
+        /// To sign in the user to profile
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        void Signin(string email, string password);
+
+
     }
 }

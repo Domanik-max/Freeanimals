@@ -10,13 +10,14 @@ namespace Shelter.CLI
     {
         static void Main(string[] args)
         {
+            //using()
             //Instantiated logger
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .WriteTo.File("/Users/domanikjohnson/Documents/C#GoOver/Freeanimals/Shelter/Shelter/Logging/Log", rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
-            
+
             //Injecting class that contains all methods 
             Repo _repo = new Repo();
 
@@ -49,14 +50,24 @@ namespace Shelter.CLI
                                     //Exceptional handling for Signin/Reg menu
                                     if (int.Parse(ans) == 1)
                                     {
-                                        //Call Sign in Method
-                                        Console.WriteLine("Signin");
+                                        string userEmail, userPassword;
+
+                                        //Take signin details
+                                        Console.WriteLine("Enter username: ");
+                                        userEmail = Console.ReadLine();
+                                        Console.WriteLine("Enter password: ");
+                                        userPassword = Console.ReadLine();
+                                        //Call method to signin user
+                                        _repo.Signin(userEmail, userPassword);
+
+
+
                                     }
                                     else if (int.Parse(ans) == 2)
                                     {
                                         // Instantiated variables
                                         string fn, ln, email, password;
-                                        
+
                                         //Store user firstname
                                         Console.WriteLine("Enter your First name: ");
                                         fn = Console.ReadLine();
@@ -69,8 +80,8 @@ namespace Shelter.CLI
                                         //Store user password
                                         Console.WriteLine("Enter your First name: ");
                                         password = Console.ReadLine();
-
                                         _repo.Register(fn,ln,email,password);
+
                                     }
                                     else
                                     {

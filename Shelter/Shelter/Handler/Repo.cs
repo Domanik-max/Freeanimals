@@ -1,6 +1,9 @@
 ﻿using System;
 using Serilog;
 using Shelter.Logic;
+using System.Text.Json.Serialization;
+using System.Text.Json;
+
 
 namespace Shelter.Handler
 {
@@ -31,8 +34,6 @@ namespace Shelter.Handler
                 Press [2]: Admin
                                                           ";
             return title;
-
-
         }
 
         /// <summary>
@@ -79,9 +80,7 @@ namespace Shelter.Handler
         /// <param name="last"></param>
         /// <param name="email"></param>
         /// <param name="password"></param>
-        /// <returns>
-        ///  returns 
-        /// </returns>
+       
         public void Register(string first, string last, string email, string password)
         {
             var newPerson = new Person
@@ -93,6 +92,11 @@ namespace Shelter.Handler
             };
 
            
+        }
+
+        public void Signin(string email, string password)
+        {
+            
         }
 
 
