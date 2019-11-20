@@ -10,6 +10,7 @@
     <Folder Include="Logic\" />
     <Folder Include="CLI\" />
     <Folder Include="Logging\" />
+    <Folder Include="Serialization\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Serilog" Version="2.9.0" />
@@ -27,5 +28,7 @@
     <None Remove="Log.txt" />
     <None Remove="20191118" />
     <None Remove="Logging20191118" />
+    <None Remove="test.txt" />
+    <None Remove="Serialization\test.txt" />
   </ItemGroup>
 </Project>

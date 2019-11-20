@@ -3,7 +3,7 @@ using Serilog;
 using Shelter.Logic;
 using System.Text.Json.Serialization;
 using System.Text.Json;
-
+using System.IO;
 
 namespace Shelter.Handler
 {
@@ -100,10 +100,9 @@ namespace Shelter.Handler
         }
 
 
-        public void Serialize()
+        public void Serialize(string text)
         {
-            
-
+     
         }
 
 

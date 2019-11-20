@@ -3,6 +3,7 @@ using Shelter.Handler;
 using Serilog;
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using System.IO;
 
 namespace Shelter.CLI
 {
@@ -10,7 +11,20 @@ namespace Shelter.CLI
     {
         static void Main(string[] args)
         {
-            //using()
+            /*
+            using (StreamWriter file = File.CreateText(@"C:\Users\domanikjohnson\Documents\C#GoOver\Freeanimals\Shelter\Shelter\test.txt"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                //serialize object directly into file stream
+                serializer.Serialize(file, _data);
+            }
+            */
+
+            FileStream fs1 = new FileStream("/Users/domanikjohnson/Documents/C#GoOver/Freeanimals/Shelter/Shelter/testt.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(fs1);
+            writer.Write("Hello Welcome");
+            writer.Close();
+
             //Instantiated logger
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()

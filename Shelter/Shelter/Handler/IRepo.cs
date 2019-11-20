@@ -32,7 +32,7 @@ namespace Shelter.Handler
         /// Functions that Serializes data
         /// </summary>
        
-        void Serialize();
+        void Serialize(string text);
 
         /// <summary>
         /// Function to deserialize data
