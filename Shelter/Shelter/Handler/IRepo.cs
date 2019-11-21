@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+
 namespace Shelter.Handler
 {
     interface IRepo
@@ -32,7 +34,7 @@ namespace Shelter.Handler
         /// Functions that Serializes data
         /// </summary>
        
-        void Serialize(string text);
+        void Serialize(string text, FileStream testFile);
 
         /// <summary>
         /// Function to deserialize data

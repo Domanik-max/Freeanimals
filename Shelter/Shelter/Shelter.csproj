@@ -31,5 +31,6 @@
     <None Remove="test.txt" />
     <None Remove="Serialization\test.txt" />
     <None Remove="testt.txt" />
+    <None Remove="Serialization\serial.txt" />
   </ItemGroup>
 </Project>

@@ -20,10 +20,10 @@ namespace Shelter.CLI
             }
             */
 
-            FileStream file = new FileStream("/Users/domanikjohnson/Documents/C#GoOver/Freeanimals/Shelter/Shelter/Serialization/serial.txt", FileMode.OpenOrCreate, FileAccess.Write);
-            StreamWriter writer = new StreamWriter(file);
-            writer.Write("Hello Welcome");
-            writer.Close();
+            //Created my file
+
+
+            FileStream file = new FileStream("/Users/domanikjohnson/Documents/C#GoOver/Freeanimals/Shelter/Shelter/Serialization/testingnow.txt", FileMode.OpenOrCreate, FileAccess.Write);
 
             //Instantiated logger
             Log.Logger = new LoggerConfiguration()
@@ -34,6 +34,9 @@ namespace Shelter.CLI
 
             //Injecting class that contains all methods 
             Repo _repo = new Repo();
+
+
+
 
             //Keep track of answers
             string ans;
@@ -73,9 +76,6 @@ namespace Shelter.CLI
                                         userPassword = Console.ReadLine();
                                         //Call method to signin user
                                         _repo.Signin(userEmail, userPassword);
-
-
-
                                     }
                                     else if (int.Parse(ans) == 2)
                                     {
@@ -86,14 +86,15 @@ namespace Shelter.CLI
                                         Console.WriteLine("Enter your First name: ");
                                         fn = Console.ReadLine();
                                         //Store user last name
-                                        Console.WriteLine("Enter your First name: ");
+                                        Console.WriteLine("Enter your Last name: ");
                                         ln = Console.ReadLine();
                                         //Store user email
-                                        Console.WriteLine("Enter your First name: ");
+                                        Console.WriteLine("Enter your email");
                                         email = Console.ReadLine();
                                         //Store user password
-                                        Console.WriteLine("Enter your First name: ");
+                                        Console.WriteLine("Enter your password");
                                         password = Console.ReadLine();
+                                        _repo.Serialize("testing", file);
                                         _repo.Register(fn,ln,email,password);
 
                                     }

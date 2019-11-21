@@ -100,9 +100,12 @@ namespace Shelter.Handler
         }
 
 
-        public void Serialize(string text)
-        {
-     
+        public void Serialize(string text,FileStream fileName)
+        { 
+            var writer = new StreamWriter(fileName);
+
+            writer.Write(text);
+            writer.Close();
         }
 
 
