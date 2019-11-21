@@ -4,6 +4,8 @@ using Shelter.Logic;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.IO;
+using
+using Newtonsoft.Json;
 
 namespace Shelter.Handler
 {
@@ -93,7 +95,7 @@ namespace Shelter.Handler
 
            
         }
-
+        
         public void Signin(string email, string password)
         {
             
@@ -103,6 +105,8 @@ namespace Shelter.Handler
         public void Serialize(string text,FileStream fileName)
         { 
             var writer = new StreamWriter(fileName);
+
+            string json = JsonConvert.
 
             writer.Write(text);
             writer.Close();
