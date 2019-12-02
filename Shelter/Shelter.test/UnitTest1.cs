@@ -8,7 +8,7 @@ namespace Shelter.test
         [Fact]
         public void Test1()
         {
-            int a = 22;
+            int a = 255;
         }
     }
 }
